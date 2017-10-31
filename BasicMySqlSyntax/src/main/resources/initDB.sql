@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS BasicMySqlSyntax;
 USE BasicMySqlSyntax;
 
 CREATE TABLE IF NOT EXISTS skills(
-  id int PRIMARY KEY,
+  id int PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(50) not NULL
 );
 
