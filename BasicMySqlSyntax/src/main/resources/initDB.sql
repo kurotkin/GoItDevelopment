@@ -1,8 +1,18 @@
 CREATE DATABASE IF NOT EXISTS BasicMySqlSyntax;
 USE BasicMySqlSyntax;
 
+DROP TABLE IF EXISTS customers_projects;
+DROP TABLE IF EXISTS companies_projects;
+DROP TABLE IF EXISTS developer_projects;
+DROP TABLE IF EXISTS developer_skill;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS developers;
+DROP TABLE IF EXISTS projects;
+DROP TABLE IF EXISTS skills;
+DROP TABLE IF EXISTS companies;
+
 CREATE TABLE IF NOT EXISTS skills(
-  id int PRIMARY KEY AUTO_INCREMENT,
+  id int PRIMARY KEY,
   name VARCHAR(50) not NULL
 );
 
@@ -14,8 +24,7 @@ CREATE TABLE IF NOT EXISTS projects(
 
 CREATE TABLE IF NOT EXISTS companies(
   id int PRIMARY KEY,
-  name VARCHAR(100) not NULL,
-  address VARCHAR(1000) not NULL
+  name VARCHAR(100) not NULL
 );
 
 CREATE TABLE IF NOT EXISTS developers(
