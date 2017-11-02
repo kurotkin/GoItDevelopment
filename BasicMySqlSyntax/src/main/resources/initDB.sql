@@ -18,8 +18,7 @@ CREATE TABLE IF NOT EXISTS skills(
 
 CREATE TABLE IF NOT EXISTS projects(
   id int PRIMARY KEY,
-  name VARCHAR(50) not NULL,
-  cost decimal not null
+  name VARCHAR(50) not NULL
 );
 
 CREATE TABLE IF NOT EXISTS companies(
