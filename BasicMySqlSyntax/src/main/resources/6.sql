@@ -2,7 +2,12 @@
 USE BasicMySqlSyntax;
 
 SELECT AVG(developers.salary)
-FROM developers, developer_projects, projects
-WHERE developers.id = developer_projects.developer_id AND projects.id = developer_projects.projects_id
-ORDER BY projects.cost DESC
-LIMIT 1;
+FROM developers
+  JOIN developer_projects ON developer_projects.developer_id = developers.id
+  JOIN projects ON (projects.id = developer_projects.projects_id
+    AND projects.id IN (
+      SELECT id
+      FROM projects
+      WHERE cost IN (SELECT min(projects.cost) FROM projects)
+    )
+  );
